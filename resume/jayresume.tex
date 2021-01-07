@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\name{Jay Taves} % Your name
+\address{151 E Wilson St. Apt. 201 \\ Madison, WI, 53703} % Your address
+\address{425 698 8401 \\ jaytaves@gmail.com \\ github.com/jaytaves} % Your phone number and email
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+\begin{rSubsection}{Simulation Based Engineering Lab}{October \osn{2019} -- Present}{Research Assistant}{Madison, WI}
+\item Managed development of SynChrono; an open-source C++ library which parallelizes the physics-based simulation engine Chrono, allowing hundreds of vehicles to operate in real-time. 
+\item Prototyped and helped implement a re-write of Chrono::Vehicle's off-road terrain algorithm, speeding it up around 60 times and enabling it to scale to arbitrary terrain sizes.
+\item Planned development goals and mentored undergraduates who were contributing to the SynChrono project.
+\item Wrote and gave talks on several conference papers and posters, gave technical presentations on design and use of SynChrono.
+\end{rSubsection}
+
+\begin{rSubsection}{Epic Systems \textnormal{--- Leading vendor of EMR (Electronic Medical Record) software}}{August \osn{2017} -- June \osn{2019}}{Interfaces Developer and Project Manager}{Madison, WI}
+\item Developed a new parsing library and several smaller projects for Epic's HL7 pharmacy interfaces.
+\item Managed the conversion of Olmsted Medical Center's legacy patient data into Epic as they went live on Epic's EMR on one of the fastest time-lines that Epic has done to date.
+\item Managed interface testing and validation for United Regional Health Care System's transition to Epic.
+\end{rSubsection}
+
+\begin{rSubsection}{Atomic and Alternative Energies Commission [CEA]}{Summer \osn{2016}}{Fuel Cladding Simulation Intern}{Saclay, France}
+\item Modeled the swelling of nuclear reactor fuel cladding in a French fourth generation fast breeder reactor.
+\item Created and ran simulations to test different swelling models for the cladding.
+\item Summarized simulation findings and results in a French technical report.
+\end{rSubsection}
+
+%\begin{rSubsection}{Custom Shoes by 3D Foot Scanning}{Spring \osn{2016}}{Second Year Group Project}{Châtenay-Malabry, France}
+%\item Created a mounted camera and projector setup along with a desktop application to scan feet and measure key dimensions of the foot.
+%\item Worked closely with a startup to ensure that the setup allowed them to quickly create custom-fitted shoes for their company.
+%\end{rSubsection}
+
+%\begin{rSubsection}{Minimization Research with Dr.~Donald Taves}{\osn{2014} -- \osn{2017}}{Research Assistant}{}
+%\item Presented a paper on the effectiveness of Minimization at the \osn{2016} Joint Statistical Meetings in Chicago
+%\item Assisted in the clinical trials research of a leading fluoride expert, by developing a tool to create sample trial groups.
+%\item Currently developing and maintaining a program that shows how dishonest investigators can be prevented from creating unbalanced control and treatment groups for clinical trials.
+%\item The code is publicly available online with a demo at https://github.com/JayTaves/Minimization
+%\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Zetron, Inc \textnormal{--- develops mission critical emergency dispatch systems}}{Summers \osn{2013 -- 2015}}{Web Developer}{Redmond, WA}
+\item Developed a web tool that replaced Zetron's phone-based quoting process, significantly improving the re-seller sales process.
+\item The web tool allows Zetron product specialists to create a questionnaire that re-sellers can use to configure a product for sale.
+% \item The tool was developed in JavaScript and C$^\#$ to remain fully compatible with Zetron's existing \textsc{sql} back end database and quote creation process.
+\end{rSubsection}
+
+%------------------------------------------------
+
+% \begin{rSubsection}{pickAtime \textnormal{--- Online Parent-Teacher Conference Scheduler}}{Summer \osn{2012}}{Software Developer}{Bellevue, WA}
+% \item Improved website design working for pickAtime.
+% \item Managed expansion and streamlining of new content on the website.
+% \item Wrote a published article promoting the benefits of online scheduling for use in schools.
+
+% \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf University of Wisconsin--Madison} \hfill {\em Expected May \osn{2021}} \\
+Masters in Mechanical Engineering \\
+Thesis on applications of high-performance computing to physics-based simulation \\
+Researcher in the Simulation Based Engineering Lab
+
+{\bf Cornell University} \hfill {\em May \osn{2017}} \\
+B.S. in Mechanical Engineering, Minor in Mathematics \\
+Physics Undergraduate TA Spring \osn{2015} \\
+Courses in Finite Element Analysis, Non-linear Dynamics and Chaos
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{}r @{\hspace{3ex}} p{14cm} }
+Programming & High-performance (CUDA, OpenMP, MPI), Web (JavaScript, C$^\#$, HTML), Scientific (C++, \textsc{Matlab}, Python), Database (SQL, Mumps) \\
+Management & Project leader for software development of the open-source library SynChrono. Project management for several Epic Systems interface installations \\
+Languages & Fluent in French, working knowledge of Spanish
+\end{tabular}
+
+\end{rSection}
+
+\end{document}

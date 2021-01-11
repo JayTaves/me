@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="home" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,48 +10,24 @@
 </head>
 
 <body>
-    <div>
+    <div style="position: fixed;top:0;z-index:1; background-color: white;width:100%">
         <h1 style="display:inline-block">Jay Taves</h1>
-        <div id="container" style="display:inline-block;width:400px">
+        <div id="container">
             <ul>
                 <li><a class="tabs" href="#home">Home</a></li>
-                <li><a class="tabs" href="#skills">skills</a></li>
-                <li><a class="tabs" href="#education">education</a></li>
+                <li><a class="tabs" href="#projects">Projects</a></li>
+                <li><a class="tabs" href="#skills">skills & education</a></li>
             </ul>
         </div>
     </div>
 
-    <section id="education">Education content</section>
-
-    <section id="skills">Skill content</section>
-
-    <section>
-        <p>
-            Hopefully you came to this website to learn a bit more about me, I made this as a nice personal landing page
-            that could be more customizable than my résumé or my GitHub.
-            If you do want a print-ready version of my résumé, you can find that <a
-                href="/resume/jayresume.pdf">here</a>.
-        </p>
-
-        <p>
-            My degrees say Mechanical Engineer, but all of the work that I've done has been in software.
-        </p>
-
+    <section id="projects" class="content">
         <h2>UW–Madison</h2>
+        <h3>SynChrono Module</h3>
 
-        <p>
-            I'm currently a Masters student in Mechanical Engineering at UW–Madison, graduating in May 2021.
-            I work in Dan Negrut's Simulation Based Engineering Lab (SBEL) working on leveraging high-performance
-            parallel
-            computing to improve the speed of our physics simulations.
-            I'm writing my thesis on the use of new integration and representation techniques to speed up multi-body
-            dynamics solvers.
-        </p>
-
-        <h4>SynChrono module</h4>
         <p>
             In many autonomous vehicle simulations, you don't care what happens if two cars collide -
-            that would be bad so you just end the simulation.
+            it's precisely the situation that you're trying to avoid.
             In SynChrono we take advantage of that fact and split a simulation of many Chrono::Vehicles across multiple
             MPI
             ranks.
@@ -62,11 +38,43 @@
                 our lab website</a>.
         </p>
 
-        <h4>Papers</h4>
+        <h3>Multibody Dynamics in the rA Formulation</h3>
 
-        Hopefully more exciting things here soon. I've submitted papers to ICRA, IMSD, blah, blah, and presented on
-        mostly
-        SynChrono-related lab research at x, y and z.
+        <p>
+            A problem analogous to mapping the two-dimensional surface of the Earth to a flat piece of paper shows up in
+            multi-body dynamics, only in three dimensions.
+            Imagine you're walking the surface of the Earth while someone tells you where to go with cardinal directions
+            (North, East, ...).
+            At some point however you arrive at the North Pole.
+            Now they can no longer tell you to go North, West or East, the only valid direction is South!
+            Where they could previously tell you to move freely along two axes (North-South and East-West), now they
+            just have one.
+        </p>
+
+        <p>
+            In multi-body dynamics, the analogue to "position on the globe" is the particular rotation of a
+            three-dimensional body (is your coffee cup upside down, tilted...).
+            One way to represent this is with <b>Euler Angles</b> (think yaw, pitch and roll), but you'll run into the
+            problem above - there will always be states where you can't get the system to change state in a particular
+            way.
+            The physical version of this problem - <a
+                href="https://en.wikipedia.org/wiki/Gimbal_lock#On_Apollo_11">gimbal lock</a> is very really and
+            actually impacted the Apollo missions.
+        </p>
+
+        <p>
+            Besides working very carefully with euler angles, another solution to the problem is to add a fourth
+            variable to describe your system (astronaut Mike Collins jokingly asked mission control for a “fourth gimbal
+            for Christmas”). Rather than four angles, a smart way of adding a fourth variable is by using <b>unit
+                quaternions</b>. These have the added advantage of having much simpler partial derivative expressions
+            than euler angles and so are in many cases preferred.
+        </p>
+
+        <p>
+            Yet another solution (the <b>rA formulation</b> for now) is to work directly "on the globe" (integrate over
+            a Lie space) rather than do any of
+            the above conversions "onto a paper map" (to a linear vector space).
+        </p>
 
         <h2>Epic</h2>
 
@@ -76,15 +84,66 @@
             As a project manager I helped manage Epic's first install that used a new fast-release paradigm.
         </p>
 
-        <h2>CEA (French Atomic Energy Commission)</h2>
+    </section>
 
-        <h2>Cornell</h2>
+    <section id="skills" class="content">
+        <p>
+            I'm currently a Mechanical Engineering Masters student at UW–Madison, where I've focused on the
+            computational aspects of engineering, taking classes in <b>computational fluid dynamics</b>, <b>multibody
+                dynamics</b>,
+            <b>numerical linear algebra</b> and <b>high-performance computing</b>.
+            I graduated from Cornell University in 2017 with a B.S. in Mechanical Engineering and a minor in Math. In my
+            junior year I studied abroad at École Centrale Paris (now CentraleSupélec), taking classes in <b>nuclear
+                engineering</b> and <b>renewable energy</b>.
+        </p>
 
-        <h2>Zetron</h2>
+        <p>
+            I've written code with <b>C++</b> and <b>MPI</b> (<a
+                href="https://github.com/projectchrono/chrono">SynChrono</a>),
+            <b>Python</b> and <b>Matlab</b>.
+            I've taken courses on parallel computing with <b>CUDA</b> and <b>OpenMP</b>.
+            I've created web applications with <b>C#</b> and <b>JavaScript</b>.
+            I'm not limited to just these though - I learned <b>MUMPS</b> while
+            working at Epic and functional programming languages like <b>OCaml</b> and <b>Haskell</b> while working on
+            <a href="projecteuler.net">Project Euler</a>. I'm sure I will use many more in the future, depending on
+            what my work requires.
+        </p>
 
-        <h2>Minimization</h2>
+        <p>
+            I'm fluent in French and read and understand Spanish.
+        </p>
+    </section>
 
-        <h2>Outside of work</h2>
+    <section id="home" class="content">
+        <p>
+            Hopefully you came to this website to learn a bit more about me, I made this as a nice personal landing page
+            that could be more customizable than my résumé or my GitHub.
+            My normal one page résumé is <a href="resume/jayresume.pdf">here</a>.
+        </p>
+
+        <p>
+            I'm currently a Masters student in Mechanical Engineering at UW–Madison, graduating in May 2021.
+            I work in Dan Negrut's <b>Simulation Based Engineering Lab</b> (<a href="sbel.wisc.edu">SBEL</a>) working on
+            leveraging high-performance
+            parallel
+            computing to improve the speed of our physics simulations.
+            I'm writing my thesis on the use of new integration and representation techniques to speed up multi-body
+            dynamics solvers.
+        </p>
+
+        <p>
+            Before UW–Madison, I worked for close to two years as a project manager and software developer with
+            <b>Epic</b> in Verona, Wisconsin. During my undergrad at <b>Cornell University</b> I spent three summers
+            developing web tools for <b>Zetron</b>. After studying abroad at <b>École Centrale Paris</b> (now
+            CentraleSupélec), I spent the summer interning at the <b>French Atomic Energy Commision</b> (CEA),
+            implementing a simple model for reactor core temperature that would help gut-check more computationally
+            intensive models.
+        </p>
+
+        <p>
+            In my free time I play Ultimate with <a href="https://twitter.com/mousetrapulti?lang=en">Madison
+                Mousetrap</a>, bike, run, read, juggle and solve chess puzzles.
+        </p>
     </section>
 
 </body>

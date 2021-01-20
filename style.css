@@ -98,5 +98,5 @@ h1 {
 
 iframe {
     width: min(560px, 90vw);
-    height: min(315px, 90vh)
+    height: min(315px, (315/560)*90vw)
 }

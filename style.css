@@ -20,7 +20,7 @@ body {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    width: 400px;
+    width: min(90vw, 400px);
 }
 
 ul {
@@ -74,7 +74,7 @@ section::before {
     display: block;
     content: "";
     margin-top: -100px;
-    height: 200px;
+    height: 225px;
     visibility: hidden;
     pointer-events: none;
 }

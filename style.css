@@ -95,3 +95,8 @@ div#tab-container {
 h1 {
     display: inline-block;
 }
+
+iframe {
+    width: min(560px, 90vw);
+    height: min(315px, 90vh)
+}

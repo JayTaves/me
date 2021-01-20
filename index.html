@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The life and times of Jay Taves">
     <link rel="stylesheet" href="style.css">
+    <!-- Thanks to: https://favicon.io/favicon-generator/ -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
@@ -40,8 +41,13 @@
                 our lab website</a>.
             While SynChrono can be used for many different vehicle simulations, both on- and off-road, one particularly
             exciting use was for using reinforcement learning to train a vehicle convoy that operates in off-road
-            terrin, shown in a video <a href="https://youtu.be/gX1KJpvPdaE">here</a>.
+            terrin, shown in a video <a href="https://youtu.be/gX1KJpvPdaE">here</a>. A scaling experiment of vehicles operating in
+            an off-road synchronized environment is shown below.
         </p>
+
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/iOmG2bOyopc" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
 
         <h3>Multibody Dynamics in the rA Formulation</h3>
 
@@ -61,18 +67,17 @@
             three-dimensional body (is your coffee cup upside down, tilted...).
             One way to represent this is with <b>Euler Angles</b> (think yaw, pitch and roll), but you'll run into the
             problem above - there will always be states where you can't get the system to change state in a particular
-            way.
-            The physical version of this problem - <a
-                href="https://en.wikipedia.org/wiki/Gimbal_lock#On_Apollo_11">gimbal lock</a> is very really and
-            actually impacted the Apollo missions.
+            way. This isn't just a mathematical oddity, it's a physical problem in attitude measurement systems called gimbal lock.
         </p>
 
         <p>
-            Besides working very carefully with euler angles, another solution to the problem is to add a fourth
-            variable to describe your system (astronaut Mike Collins jokingly asked mission control for a “fourth gimbal
-            for Christmas”). Rather than four angles, a smart way of adding a fourth variable is by using <b>unit
+            Besides working very carefully with euler angles, another solution is to add a fourth
+            variable to describe your system (astronaut Mike Collins jokingly asked mission control for a <a
+                href="https://www.hq.nasa.gov/alsj/gimbals.html">“fourth gimbal
+                for Christmas”</a>). Rather than four angles, a smart way of adding a fourth variable is by using <b>unit
                 quaternions</b>. These have the added advantage of having much simpler partial derivative expressions
-            than euler angles and so are in many cases preferred.
+            than euler angles and so are in many cases preferred. The downside of unit quaternions or any other fourth variable is
+            simply that it is redundant; rotations are fundamentally three-dimensional.
         </p>
 
         <p>
